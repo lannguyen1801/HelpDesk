@@ -1,0 +1,35 @@
+#menu{
+    width: auto;
+    margin: 5px;
+    
+}
+#menu ul{
+    border-radius: 15px;
+    list-style: none;
+    background: #8db3ef;
+    text-align: center;
+}
+#menu li {
+  color: #ffffff;
+  display: inline-block;
+  width: 200px;;
+  height: 40px;
+  line-height: 40px;
+  margin-left: -5px;
+}
+#menu ul li a{
+    color: aliceblue;
+}
+#menu a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+#menu a:hover {
+  background: #F1F1F1;
+  color: #333;
+}
+#table{
+	margin: auto;
+	width: 1100px;
+}

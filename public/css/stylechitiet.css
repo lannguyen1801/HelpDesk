@@ -1,0 +1,142 @@
+* {
+
+padding: 0;
+
+margin: 0;
+
+border: none;
+
+}
+.progress {
+    display: block;
+    text-align: center;
+    width: 0;
+    height: 3px;
+    background: red;
+    transition: width .3s;
+}
+.progress.hide {
+    opacity: 0;
+    transition: opacity 1.3s;
+}
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 15px;
+    width: auto;
+	background: url(../img/nhanvienlogin/body.png);
+	margin: 0px;
+	padding: 0px;
+}
+a{
+    text-decoration: none;
+    text-decoration-color: aliceblue;
+}
+label.error{
+        color: red;
+    }
+#id {
+    padding: 5px;
+    margin: 5px;
+	background-color: #E8E8E8;
+    border: 55px;
+}
+#fullname {
+    padding: 5px;
+    margin: 5px;
+	background-color: #E8E8E8;
+    border: 55px;
+}
+#birth {
+    padding: 5px;
+    margin: 5px;
+	background-color: #E8E8E8 ;
+    border: 55px;
+}
+#department {
+    padding: 5px;
+    margin: 5px;
+	background-color: #E8E8E8;
+    border: 55px;
+}
+#position {
+    padding: 5px;
+    margin: 5px;
+	background-color: #E8E8E8;
+    border: 55px;
+}
+#email {
+    padding: 5px;
+    margin: 5px;
+	background-color: #E8E8E8;
+    border: 55px;
+}
+
+#header{
+	background-image:url(../img/nhanvienlogin/header.jpg);
+    repeat-x;
+	height: 109px;
+	background-size: cover;
+}
+
+ #webname{
+ 	width: 1000px;
+ 	margin: 0px auto;
+ 	height: 109px;
+ }
+#webname img{
+ 	margin-top: 25px;
+ }
+.itemFuntion{
+    text-align:center;
+}
+ #header_icon{
+
+ 	float: right;
+    margin-top: 0px;
+    margin-right: 10px;
+ }
+#content {
+	margin: auto;
+	margin-top: 20px;
+    height: auto;
+    width: 1200px;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+    background-color: #ffffff;
+}
+#information{
+    margin: 11px;
+    height: 500px;
+    float: left;
+    width: 470px;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+}
+#function{
+
+    margin: 11px;
+    float: right;
+    height: 500px;
+    width: 480px;
+    border: 1px solid #c9c9c9;
+    border-radius: 15px;
+}
+#spreadsheet{
+	margin-top: 50px;
+	margin-left: 50px;
+}
+#search{
+	margin-top: 50px;
+	margin-left: 50px;
+}
+#statistic{
+	margin-top: 50px;
+	margin-left: 50px;
+}
+
+.button_style{
+background-color: Transparent;
+border: none;
+cursor:pointer;
+text-decoration-color: #000000;
+}
