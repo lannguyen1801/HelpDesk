@@ -33,14 +33,15 @@
 	</head>
 	<body style="background: #c2ddfc; padding: 0px; margin: 0px;">
 		<div id="header">
+            
 			<div id="webname">
-				<div style="color: aqua; font-size: 40px; width: 800px;float: left">Hệ thống quản lý sự cố Helpdesk</div>
-                <div id="header_icon" >
+				<div style="margin-top:10px;font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
+                <div id="header_icon" style="margin-top:10px;">
                      <div id="home" >
-                        <a href="../logout.php"><img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a>
+                        <a href="../logout.php"><img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 5px" alt="Thoát"></a>
                     </div>
 
-                    <div id="logout" style="margin:0px; padding:0; ">
+                    <div id="logout" style="margin-top:5px padding:0; ">
                         <a href="quanly.php">
                             <img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ">
                         </a>
