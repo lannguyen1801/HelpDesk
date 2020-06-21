@@ -93,18 +93,17 @@
 	<body style="background: #c2ddfc; padding: 0px; margin: 0px;">
 		 <!-- <div class="Container">
             <div class="row"> -->
-                <div id="header">
-					<div id="webname">
-						<div style="color: aqua; font-size: 40px">
-							Hệ thống quản lý sự cố helpdesk
-						</div>
+                <div id="header" >
+						 
+			<div id="webname" >
+				<div style="font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
 		                <div id="header_icon">
 		                     <div id="home" >
 		                     	<a href="../logout.php">
 		                     		<img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát">
 		                     	</a>
 		                     </div>
-		                    <div id="logout" style="margin:0px; padding:0; ">
+		                    <div id="logout" style=" margin-top:3px;padding:0px; ">
 		                    	<a href="quanly.php">
 		                    		<img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ">
 		                    	</a>
@@ -125,7 +124,7 @@
         	<!-- Start Thêm  thanh điều hướng_Tiên_20/06 -->
 		        <div class="col-lg-4">
 		                <nav class="breadcrumb-container" aria-label="breadcrumb">
-		                    <ol class="breadcrumb">
+		                    <ol style="background-color:  aliceblue;" class="breadcrumb">
 		                        <li class="breadcrumb-item">
 		                            <a href="../QuanLy/quanly.php"><i class="fa fa-home"></i>  Quản Lý</a>
 		                        </li>
@@ -153,12 +152,11 @@
 
              <form action="xulythem.php" enctype="multipart/form-data" method="post">
 			
-					
-					<div style="text-align: center" >
-						<h2>Thêm Sự Cố</h2>
+					<div style="text-align: center;" >
+						<h2 >Thêm Sự Cố</h2>
 					</div><!--Tiên_20/06 -->
 
-        	    <table align="center" width="100%" height="413">
+        	    <table  align="center" width="100%" height="413">
         		<?php
                             if(isset($_SESSION['them'])){
                                 echo '<span class="text-alert">'.$_SESSION['them'].'</span>';
@@ -169,20 +167,20 @@
         				<td width ="10%" height="41">Tên sự cố</td>
    				  	  <td width="90%"> <input type="text" style="width: 200px; height: 20px" name="tensuco" placeholder="Nhập tên sự cố" required /></br></td>
         			</tr> -->
-        			<tr>
-					  	<td><label for="sel2">Tên sự cố</label></td>
+        			<tr >
+					  	<td><label for="sel2"> &emsp;Tên sự cố</label></td>
 						<td>
 							<select  name="tensuco" class="form-control" id="tensuco" style="width:150px;">
-								  <option value="Phần Mềm">Phần Mềm</option>
-								  <option value="Phần Cứng">Phần Cứng</option>
+								  <option value="Phần Mềm">&emsp;Phần Mềm</option>
+								  <option value="Phần Cứng">&emsp;Phần Cứng</option>
 								</select>
 
 						</td>
 					</tr>
-					
-        			<tr>
-        				<td><label for="sel2">Mô tả sự cố</label></td>
-        				<td > <textarea style="width: 300px; height: 40px" name="motasuco" placeholder="Nhập mô tả" required></textarea></br></td>
+					<tr></tr>
+        			<tr >
+        				<td ><label for="sel2">&emsp;Mô tả sự cố</label></td>
+        				<td > <textarea style="margin-top: 10px; width: 300px; height: 40px" name="motasuco" placeholder="Nhập mô tả" required></textarea></br></td>
         			</tr>
 <!--
         			<tr>
@@ -192,7 +190,7 @@
         			</tr>
 -->
         			<tr>
-        				<td><label for="sel2">Thông tin thêm</label></td>
+        				<td><label for="sel2">&emsp;Thông tin thêm</label></td>
 						<td><textarea name="post_content" id="editor" ></textarea></td>
 						<script>
 						var url = 'http://localhost/helpdesk';
@@ -231,9 +229,9 @@
 <!--        				<td><input type="file" name="avatar"/></br></td>-->
         			</tr>
 					<tr>
-					  <td><label for="sel2">Phòng</label></td>
+					  <td><label style="margin-top: 10px;" for="sel2">&emsp;Phòng</label></td>
 						<td>
-							<select name="sophong" class="form-control" id="phong" style="width:150px;">
+							<select name="sophong" class="form-control" id="phong" style="margin-top: 10px; width:150px;">
                         <?php
                         $sql='SELECT * FROM phongban;';
                         $result=mysqli_query($conn,$sql);
@@ -250,9 +248,9 @@
 						</td>
 					</tr>
 					<tr>
-					  <td><label for="sel2">Thiết bị hỏng</label></td>
+					  <td ><label style="margin-top: 10px;"  for="sel2">&emsp;Thiết bị hỏng</label></td>
 						<td>
-							<select  name="thietbihong" class="form-control" id="thietbihong" style="width:150px;">
+							<select  name="thietbihong" class="form-control" id="thietbihong" style="width:150px;margin-top: 10px;">
 								  <option value="0">Máy PC</option>
 								  <option value="1">Laptop</option>
 								  <option value="2">Máy tính bảng</option>
@@ -265,9 +263,9 @@
 					</tr>
 					
 					<tr>
-        				<td><label for="sel2">Số máy</label></td>
+        				<td><label style="margin-top: 10px;" for="sel2">&emsp;Số máy</label></td>
    				  	  	<td width="90%"> 
-   				  	  		<input type="text" style="width: 200px; height: 20px" name="somay" id="txtsomay" placeholder="Nhập số máy" required />
+   				  	  		<input type="text" style="margin-top: 10px;width: 300px; height: 40px" name="somay" id="txtsomay" placeholder="Nhập số máy" required />
    				  	  		</br> 
    				  	  		<div id="nhacLoiUn"></div>
    				  	  	</td>

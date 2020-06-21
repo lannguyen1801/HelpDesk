@@ -149,12 +149,12 @@ $i=1;
                 <div id="header">
                   <div id="webname">
 <!--					  <img src="../img/icon.png" style="width: 50px;height: 50px;" >-->
-						<div style="color: aqua; font-size: 40px; width: 800px;float: left"><img src="../img/icon.png" style="width: 70px;height: 70px; padding-bottom: 30px" >Hệ thống quản lý sự cố Helpdesk</div>
+						<div style="margin-top:10px;font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                         <div id="header_icon">
                             <div id="home">
                                 <a href="../logout.php"><img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" 			alt="Thoát"></a>
                             </div>
-                            <div id="logout" style="margin:0px; padding:0; ">
+                            <div id="logout" style="margin-top:3px; padding:0; ">
                                 <a href="quanly.php"><img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" 				alt="Trang chủ"></a>
                             </div>
                             <div id="name"><strong style="color: #e0f74f"><?php echo $name.'  ('. $Mnv.')' ?></strong></div>
@@ -168,7 +168,7 @@ $i=1;
         	 <!-- Start Thêm  thanh điều hướng_Tiên_20/06 -->
             <div class="col-lg-5">
                 <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol style="background: white" class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="../QuanLy/quanly.php"><i class="fa fa-home"></i>   Quản Lý</a>
                         </li>
@@ -192,20 +192,20 @@ $i=1;
                 </ul>
             </div> -->
 			<div style="width:1000px; margin: auto;">
-				<h3>Sự cố</h3>
+				<h3 align="center">Sự cố</h3>
 					<table width="89%" height="50" class="table table-bordered" >
 					<tr>
-						<th width="5%">ID</th>
-						<th width="15%">Tên sự cố</th>
-						<th width="17%">Mô tả</th>
-								<th width="17%">Thông tin</th>
-								<th >Thiết bị hỏng</th>
-								<th >Mức độ</th>
-				<th width="15%">Trạng thái</th>
-						<th width="15%">Ngày tạo</th>
-						<th width="16%">Dự kiến hoàn thành</th>
+						<th style="text-align: center;" width="5%">ID</th>
+						<th style="text-align: center;" width="9%">Tên sự cố</th>
+						<th style="text-align: center;"width="15%">Mô tả</th>
+						<th style="text-align: center;"width="10%">Thông tin</th>
+						<th style="text-align: center;"width="9%">Thiết bị hỏng</th>
+						<th style="text-align: center;"width="9%" >Mức độ</th>
+						<th style="text-align: center;"width="9%">Trạng thái</th>
+						<th style="text-align: center;"width="12%">Ngày tạo</th>
+						<th style="text-align: center;"width="12%">Dự kiến hoàn thành</th>
 					</tr>
-					<tr>
+					<tr align="center">
 						<td><?php echo $idsc?></td>
 						<td><?php echo $tensuco?></td>
 						<td><?php echo $motasuco?></td>
@@ -245,7 +245,7 @@ $i=1;
 				   <br />  
 				   <div class="table-responsive">
 					<div align="right">
-					 <button type="button" name="id" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-warning">Phân công và đánh giá công việc</button>
+					 <button type="button" name="id" id="age" data-toggle="modal" data-target="#add_data_Modal" class="btn btn-primary">Phân công và đánh giá công việc</button>
 					</div>
 					<br />
 					<div id="employee_table">
@@ -266,7 +266,14 @@ $i=1;
 						<td><?php echo $i++; ?></td>
 					   <td><?php echo $row["congviec"]; ?></td>
 						  <td><?php echo $row["taikhoan"]; ?></td>
-						 <td><input type="button" value="<?php echo $row["trangthai"]; ?>" class="btn btn-info btn-xs view_data"/></td>
+
+						
+
+
+
+
+
+						<td><input type="button" value="<?php echo $row["trangthai"]; ?>" class="btn btn-info btn-xs view_data"/></td> 
 						  
 					    <td><input type="button" name="view" value="Xem" id="<?php echo $row["idgq"]; ?>" class="btn btn-info btn-xs view_data" /></td>
 					  </tr>
@@ -294,7 +301,7 @@ $i=1;
   <div class="modal-content">
    <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Phân công và đánh giá công việc</h4>
+    <h4 class="modal-title" align="center">Phân công và đánh giá công việc</h4>
    </div>	  
    <div class="modal-body">
     <form method="post" id="insert_form">
@@ -364,7 +371,7 @@ $i=1;
   <div class="modal-content">
    <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Thông tin công việc</h4>
+    <h4 align="center" class="modal-title">Thông tin công việc</h4>
    </div>
    <div class="modal-body" id="employee_detail">
     

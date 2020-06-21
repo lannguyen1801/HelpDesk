@@ -25,7 +25,7 @@
     $queryuser=mysqli_query($conn,$sqluser);
 	$kq=$conn->query($sqluser);
     $row1= $kq->fetch_assoc();
-	$idsuco = $row1['idsuco'];
+	//$idsuco = $row1['idsuco'];
 	$i=1;
 ?>
     <!DOCTYPE html>
@@ -58,12 +58,12 @@
             <div class="row">
                 <div id="header">
                     <div id="webname">
-						<div style="color: aqua; font-size: 40px; width: 800px;float: left;">Hệ thống quản lý sự cố Helpdesk</div>
+						<div style="margin-top:8px;font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                         <div id="header_icon">
                             <div id="home">
                                 <a href="../logout.php"><img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a>
                             </div>
-                            <div id="logout" style="margin:0px; padding:0; ">
+                            <div id="logout" style="margin-top:3px; padding:0; ">
                                 <a href="kythuat.php"><img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ"></a>
                             </div>
                             <div id="name"><strong style="color: #e0f74f"><?php echo $name.'  ('. $Mnv.')' ?></strong></div>
@@ -77,7 +77,7 @@
             <!-- Start Thêm  thanh điều hướng_Tiên_20/06 -->
             <div class="col-lg-4">
                 <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol style="background: white" class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="../KyThuat/kythuat.php"><i class="fa fa-home"></i>   Kỹ Thuật Viên</a>
                         </li>
@@ -108,18 +108,17 @@
                 <table border="1px" class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
                     <thead>
                         <tr align="center">
-                            <th width="5%">STT</th>
-                            <th width="12%">Tên sự cố</th>
-                            <th width="16%">Mô tả sự cố</th>
-							<th width="12%">Phòng</th>
-							<th width="9%">Số máy</th>
-						    <th >Thiết bị hỏng</th>
-                            <th >Mức độ</th> 
-							<th width="14%">Thông tin</th>
-							<th width="18%">Ngày tạo</th>
-							<th width="18%">Ngày dự kiến hoàn thành</th>
-<!--							<th width="11%">Thao tác</th>-->
-                            <th width="14%">Trạng thái</th>
+                            <th style="text-align: center;" width="5%">STT</th>
+                            <th style="text-align: center;" width="11%">Tên sự cố</th>
+                            <th style="text-align: center;"  width="15%">Mô tả sự cố</th>
+                            <th style="text-align: center;" width="9%">Phòng</th>
+                            <th style="text-align: center;" width="5%">Số máy</th>
+                            <th style="text-align: center;" width="9%">Thiết bị hỏng</th>
+                            <th style="text-align: center;" width="10%">Mức độ</th>
+                            <th style="text-align: center;" width="13%">Thông tin thêm</th>
+                            <th style="text-align: center;" width="11%">Ngày tạo</th>
+                            <th style="text-align: center;" width="11%">Ngày dự kiến hoàn thành</th>
+                            <th style="text-align: center;" width="9%">Trạng thái</th>
 <!--                            <th>Hành động</th>-->
                             
                         </tr>
@@ -162,7 +161,21 @@
 //						echo '<td>'.'<img src="../NhanVien/themsuco/'.$userList["hinhanh"].'"  width=40px height=20px/>'.'</td>';
 //						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="del.php?id='.$userList["idsuco"].'" onclick="return confirmAction()"> Delete</a>
 //                                <i class="fa fa-pencil fa-fw"></i> <a href="../edituser.php?id='.$userList["idsuco"].'">Edit</a></td>';
-						echo '<td><a href="sucocanxuly.php?id='.$userList["idsuco"].'" class="btn btn-primary" >'.$userList["trangthai"].'</a></td>';
+                        if($userList["trangthai"]=="Hoàn thành")
+                      echo  '<td><a href="sucocanxuly.php?id='.$userList["idsuco"].'" class="btn  btn-success" >'.$userList["trangthai"].'</a></td>';
+                    elseif($userList["trangthai"]=="Chưa duyệt")
+                     echo  '<td><a href="sucocanxuly.php?id='.$userList["idsuco"].'" class="btn btn-danger" >'.$userList["trangthai"].'</a></td>';
+                    elseif($userList["trangthai"]=="Đang xử lý")
+                     echo  '<td><a href="sucocanxuly.php?id='.$userList["idsuco"].'" class="btn btn-warning" >'.$userList["trangthai"].'</a></td>';
+                     elseif($userList["trangthai"]=="Đã duyệt")
+                     echo  '<td><a href="sucocanxuly.php?id='.$userList["idsuco"].'" class="btn btn-primary" >'.$userList["trangthai"].'</a></td>';
+
+
+
+
+
+
+						// echo '<td><a href="sucocanxuly.php?id='.$userList["idsuco"].'" class="btn btn-primary" >'.$userList["trangthai"].'</a></td>';
                     //  echo  '<td>'.$userList["trangthai"].'</td>';
                    
                         echo '</tr>';

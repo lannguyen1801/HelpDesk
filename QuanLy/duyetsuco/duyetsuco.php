@@ -53,9 +53,7 @@ mysqli_set_charset($conn, 'UTF8');
             <div class="row">
                 <div id="header">
                     <div id="webname">
-						<div style="color: aqua; font-size: 40px; width: 800px;float: left">
-                            Hệ thống quản lý sự cố Helpdesk
-                        </div>
+						<div style="font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                         <div id="header_icon">
                             <div id="home">
                                 <a href="../../logout.php"><img src="../../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a>
@@ -73,7 +71,7 @@ mysqli_set_charset($conn, 'UTF8');
             <!-- Start Thêm  thanh điều hướng_Tiên_20/06 -->
             <div class="col-lg-4">
                 <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol style="background-color: white;" class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="../quanly.php"><i class="fa fa-home"></i>   Quản Lý</a>
                         </li>
@@ -101,18 +99,18 @@ mysqli_set_charset($conn, 'UTF8');
                 <table border="1px" class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
                     <thead>
                         <tr align="center">
-                            <th width="6%">STT</th>
-                            <th width="10%">Tên sự cố</th>
-                            <th width="13%">Mô tả sự cố</th>
-							<th width="7%">Phòng</th>
-							<th width="7%">Số máy</th>
-							<th >Thiết bị hỏng</th>
-                            <th >Mức độ</th>
-							<th width="12%">Thông tin thêm</th>
-							 <th width="10%">Ngày tạo</th>
-							  <th width="10%">Ngày dự kiến hoàn thành</th>
-                            <th width="10%">Trạng thái</th>
-							<th width="15%">Thao tác</th>
+                            <th style="text-align: center;" width="5%">STT</th>
+                            <th style="text-align: center;" width="11%">Tên sự cố</th>
+                            <th style="text-align: center;"  width="11%">Mô tả sự cố</th>
+							<th style="text-align: center;" width="9%">Phòng</th>
+							<th style="text-align: center;" width="5%">Số máy</th>
+							<th style="text-align: center;" width="9%">Thiết bị hỏng</th>
+                            <th style="text-align: center;" width="7%">Mức độ</th>
+							<th style="text-align: center;" width="11%">Thông tin thêm</th>
+							<th style="text-align: center;" width="11%">Ngày tạo</th>
+							<th style="text-align: center;" width="11%">Ngày dự kiến hoàn thành</th>
+                            <th style="text-align: center;" width="9%">Trạng thái</th>
+							<th style="text-align: center;" width="9%">Thao tác</th>
 <!--                            <th>Hành động</th>-->
                            
                         </tr>
@@ -122,7 +120,7 @@ mysqli_set_charset($conn, 'UTF8');
                     while ($userList=mysqli_fetch_array($queryuser)){
                       echo  '<tr class="odd gradeX" align="center" height="100px">';
                       echo  '<td>'.$i++.'</td>';
-                      echo  '<td>'.$userList["tensuco"].'</td>';
+                      echo  '<td >'.$userList["tensuco"].'</td>';
                       echo  '<td>'.$userList["motasuco"].'</td>';
 					  echo  '<td>'.$userList["sophong"].'</td>';
 					  echo  '<td>'.$userList["somay"].'</td>';
@@ -158,7 +156,19 @@ mysqli_set_charset($conn, 'UTF8');
 //						$hinhanh=../../themsuco/.$userList;
 						echo  '<td>'.$userList["thoigianyeucau"].'</td>';
 						echo  '<td>'.$userList["thoigianhoanthanh"].'</td>';
-						echo '<td><a href="../edituser.php?id='.$userList["idsuco"].'" class="btn btn-primary" >'.$userList["trangthai"].'</a></td>';
+
+                        if($userList["trangthai"]=="Hoàn thành")
+                      echo  '<td><a href="../edituser.php?id='.$userList["idsuco"].'" class="btn  btn-success" >'.$userList["trangthai"].'</a></td>';
+                    elseif($userList["trangthai"]=="Chưa duyệt")
+                     echo  '<td><a href="../edituser.php?id='.$userList["idsuco"].'" class="btn btn-danger" >'.$userList["trangthai"].'</a></td>';
+                    elseif($userList["trangthai"]=="Đang xử lý")
+                     echo  '<td><a href="../edituser.php?id='.$userList["idsuco"].'" class="btn btn-warning" >'.$userList["trangthai"].'</a></td>';
+                     elseif($userList["trangthai"]=="Đã duyệt")
+                     echo  '<td><a href="../edituser.php?id='.$userList["idsuco"].'" class="btn btn-primary" >'.$userList["trangthai"].'</a></td>';
+
+
+
+						// echo '<td><a href="../edituser.php?id='.$userList["idsuco"].'" class="btn btn-primary" >'.$userList["trangthai"].'</a></td>';
                     //  echo  '<td>'.$userList["trangthai"].'</td>';
 						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="del.php?id='.$userList["idsuco"].'" onclick="return confirmAction()"> Xóa</a>
                                 <i class="fa fa-pencil fa-fw"></i> <a href="../sua.php?id='.$userList["idsuco"].'">Sửa</a></td>';

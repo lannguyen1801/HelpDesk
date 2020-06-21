@@ -92,16 +92,14 @@
 	<body style="background: #c2ddfc; padding: 0px; margin: 0px;">
 		<div id="header">
 			<div id="webname">
-				<div style="color: aqua; font-size: 40px">
-					Hệ thống quản lý sự cố helpdesk
-				</div>
+				<div style="font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                 <div id="header_icon">
                      <div id="home" >
                      	<a href="../logout.php">
                      		<img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát">
                      	</a>
                      </div>
-                     <div id="logout" style="margin:0px; padding:0; ">
+                     <div id="logout" style="margin-top:3px; padding:0; ">
                         	<a href="quanly.php">
                         		<img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ">
                         	</a>
@@ -123,7 +121,7 @@
         	<!-- Start Thêm  thanh điều hướng_Tiên_20/06 -->
             <div class="col-lg-4">
                 <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol style="background-color:  aliceblue;" class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="../QuanLy/quanly.php"><i class="fa fa-home"></i>  Quản Lý</a>
                         </li>
@@ -160,7 +158,7 @@
  
         			<tr>
         				
-        				<td><label for="sel2">Tiêu đề</label></td>
+        				<td><label for="sel2">&emsp;Tiêu đề</label></td>
         				<td > <textarea style="width: 300px; height: 40px" name="tieude" placeholder="Nhập tiêu đề sự cố thường gặp" required></textarea></br></td>
         			</tr>
 <!--
@@ -171,7 +169,7 @@
         			</tr>
 -->
         			<tr>
-        				<td><label for="sel2">Giải quyết</label></td>
+        				<td><label for="sel2">&emsp;Giải quyết</label></td>
         				
 						<td><textarea name="post_content" id="editor1" ></textarea></td>
 						<script>

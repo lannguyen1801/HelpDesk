@@ -58,12 +58,12 @@
             <div class="row">
                 <div id="header">
                     <div id="webname">
-						<div style="color: aqua; font-size: 40px;float: left;width: 800px;">Hệ thống quản lý sự cố Helpdesk</div>
+						<div style="margin-top:10px;font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                         <div id="header_icon">
                             <div id="home">
                                 <a href="../../logout.php"><img src="../../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a>
                             </div>
-                            <div id="logout" style="margin:0px; padding:0; ">
+                            <div id="logout" style="margin-top:3px; padding:0; ">
                                 <a href="../nhanvien.php"><img src="../../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ"></a>
                             </div>
                             <div id="name"><strong style="color: #e0f74f"><?php echo $name.'  ('. $Mnv.')' ?></strong></div>
@@ -78,7 +78,7 @@
             <!-- Start Thêm  thanh điều hướng_Tiên_20/06 -->
                 <div class="col-lg-4">
                         <nav class="breadcrumb-container" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
+                            <ol style="background: white" class="breadcrumb">
                                 <li class="breadcrumb-item">
                                     <a href="../nhanvien.php"><i class="fa fa-home"></i>  Nhân Viên</a>
                                 </li>
@@ -108,22 +108,18 @@
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead >
                         <tr align="center">
-                            <th width="5%">STT</th>
-                            <th width="12%" >Tên sự cố</th>
-                            <th width="10%">Mô tả sự cố</th>
-							<th width="8%">Phòng</th>
-							<th width="5%">Số máy</th>
-							<th width="5%" >Thiết bị hỏng</th>
-                            <th width="5%" >Mức độ hỏng</th>
-							<th width="15%" >Thông tin thêm</th>
-							<th width="15%">Ngày tạo</th>
-							<th width="15%">Ngày dự kiến hoàn thành</th>
-<!--							<th width="11%">Xem chi tiet</th>-->
-                            <th width="8%" >Trạng thái</th>
-<!--                            <th>Hành động</th>-->
-                           
-						
-							<th width="8%">Thao tác</th>
+                            <th style="text-align: center;" width="5%">STT</th>
+                            <th style="text-align: center;" width="11%">Tên sự cố</th>
+                            <th style="text-align: center;"  width="11%">Mô tả sự cố</th>
+                            <th style="text-align: center;" width="9%">Phòng</th>
+                            <th style="text-align: center;" width="5%">Số máy</th>
+                            <th style="text-align: center;" width="9%">Thiết bị hỏng</th>
+                            <th style="text-align: center;" width="7%">Mức độ</th>
+                            <th style="text-align: center;" width="11%">Thông tin thêm</th>
+                            <th style="text-align: center;" width="11%">Ngày tạo</th>
+                            <th style="text-align: center;" width="11%">Ngày dự kiến hoàn thành</th>
+                            <th style="text-align: center;" width="9%">Trạng thái</th>
+                            <th style="text-align: center;" width="9%">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>

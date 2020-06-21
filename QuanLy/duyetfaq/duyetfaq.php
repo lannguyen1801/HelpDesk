@@ -52,12 +52,12 @@ mysqli_set_charset($conn, 'UTF8');
             <div class="row">
                 <div id="header">
                     <div id="webname">
-						<div style="color: aqua; font-size: 40px; width: 800px;float: left">Hệ thống quản lý sự cố Helpdesk</div>
+						<div style="font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                         <div id="header_icon">
                             <div id="home">
                                 <a href="../../logout.php"><img src="../../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a>
                             </div>
-                            <div id="logout" style="margin:0px; padding:0; ">
+                            <div id="logout" style="margin-top:3px; padding:0; ">
                                 <a href="../quanly.php"><img src="../../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ"></a>
                             </div>
                             <div id="name"><strong style="color: #e0f74f"><?php echo $name.'  ('. $Mnv.')' ?></strong></div>
@@ -70,7 +70,7 @@ mysqli_set_charset($conn, 'UTF8');
             <!-- Start Thêm  thanh điều hướng_Tiên_20/06 -->
             <div class="col-lg-5">
                 <nav class="breadcrumb-container" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
+                    <ol style="background-color: white;" class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="../quanly.php"><i class="fa fa-home"></i>  Quản Lý</a>
                         </li>
@@ -99,26 +99,25 @@ mysqli_set_charset($conn, 'UTF8');
                 <table border="1px" class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
                     <thead>
                         <tr align="center">
-                            <th width="6%">STT</th>
-                            <th width="13%">Tiêu đề</th>		
-							<th width="12%">Giải tuyết</th>
-							<th width="15%">Thao tác</th>
+                            <th style="text-align: center;" width="5%">STT</th>
+                            <th  style="text-align: center;" width="40%">Tiêu đề</th>		
+							<th  style="text-align: center;" width="45%">Giải tuyết</th>
+							<th  style="text-align: center;" width="10%">Thao tác</th>
 <!--                            <th>Hành động</th>-->
-                           
                         </tr>
                     </thead>
                     <tbody>
                     <?php
                     while ($userList=mysqli_fetch_array($queryuser)){
-                      echo  '<tr class="odd gradeX" align="center" height="300px">';
+                      echo  '<tr class="odd gradeX" align="center">';
                       echo  '<td>'.$i++.'</td>';
               
-                      echo  '<td>'.$userList["tieude"].'</td>';
+                      echo  '<td style="text-align: left;">'.$userList["tieude"].'</td>';
 					
 						
 //						$hinhanh=../../themsuco/.$userList;
-						echo '<td >'.$userList["giaiquyet"].'</td>';
-						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="delfaq.php?id='.$userList["idfaq"].'" onclick="return confirmAction()"> Xóa</a>
+						echo '<td style="text-align: left;" >'.$userList["giaiquyet"].'</td>';
+						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="delfaq.php?id='.$userList["idfaq"].'" onclick="return confirmAction()"> Xóa</a><br>
                                 <i class="fa fa-pencil fa-fw"></i> <a href="../suafaq.php?id='.$userList["idfaq"].'">Sửa</a></td>';
                     //  echo  '<td>'.$userList["trangthai"].'</td>';
                      
