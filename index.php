@@ -66,16 +66,17 @@ if(isset($_POST["submit"])){
 </head>
 <body>
 <div id="google_translate_element"></div> 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function googleTranslateElementInit() {
 new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 </script>
 
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 	<table id="table">
+		<br><br>
 		<tr>
-			<td colspan="3"><h1 class="welcome text-center">HỆ THỐNG QUẢN LÝ SỰ CỐ HELPDESK</h1></td>
+			<th colspan="3"><h1 style="color: white" align="center" ><b>HỆ THỐNG QUẢN LÝ SỰ CỐ HELPDESK</b></h1></th>
 		</tr>
 		<tr >
 			<td></td>
