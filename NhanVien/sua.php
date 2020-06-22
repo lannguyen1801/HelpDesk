@@ -67,12 +67,12 @@ if(isset($_POST["btedit"])) {
 //    $nameCV=$tenchucvu["TenChucVu"];
 //    $ngaysinh=$_POST["ngaysinh"];
 //    $stt=$_POST["stt"]; // 1 hiện 0 ẩn
-    $nvsql="UPDATE `suco` SET `tensuco`='$name',`motasuco`='$mota',`hinhanh`='$thongtin',`sophong`='$sp',`somay`='$sm',`thietbihong`='$tbh',`thoigianhoanthanh`='$hoanthanh' WHERE idsuco = '$idsc' ";
+    $nvsql="UPDATE `suco` SET `tensuco`='$name',`motasuco`='$mota',`hinhanh`='$thongtin',`sophong`='$sp',`somay`='$sm',`thietbihong`='$tbh' WHERE idsuco = '$idsc' ";
 //    mysqli_query($conn,$nvsql);
 //    $usql="UPDATE taikhoan SET `TRANGTHAI`=$stt,`CAPDO`=$chucvu, NgayUpDate= CURRENT_DATE WHERE MACB='$manv' ;";
     if(mysqli_query($conn,$nvsql)){
         $ero=0;
-        header('Location: sua.php?id='.$idsc.'&eror='.$ero);
+        header('Location: ../Nhanvien/xemsuco/xemsuco1.php?id='.$idsc.'&eror='.$ero);
     }else {
         $ero=1;
         header('Location: sua.php?id='.$idsc.'&eror='.$ero);
@@ -131,7 +131,7 @@ if(isset($_POST["btedit"])) {
                                     <a href="../nhanvien.php"><i class="fa fa-home"></i>  Nhân Viên</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="../xemsuco/xemsuco1.php">Xem sự cố</a>
+                                    <a href="../Nhanvien/xemsuco/xemsuco1.php">Xem sự cố</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="../xemsuco/sua.php">Chỉnh sửa sự cố</a>
@@ -197,10 +197,6 @@ if(isset($_POST["btedit"])) {
                     <label for="usr1">Mô tả sự cố</label>
                     <?php echo '<input type="text" name="mota" value="'.$motasuco.'" class="form-control" id="mota" placeholder="Nguyễn Văn A">';?>
 
-                </div>
-				<div class="form-group">
-                    <label for="exampleInputEmail1">Thời gian dự kiến hoàn thành</label>
-                    <?php echo '<input type="date" name="hoanthanh" class="form-control" value="'.$thoigianhoanthanh.'" id="hoanthanh" placeholder="dd-mm-yyyy" readonly>';?>
                 </div>
 				<div class="form-group">
                     <label for="usr">Phòng</label>

@@ -17,7 +17,7 @@
     $email=$row['email'];
     $chucvu=$row['ten'];
 	$trangthai = 0;
- 	$sqluser="SELECT suco.*,trangthai FROM suco,trangthai
+ 	$sqluser="SELECT suco.*,trangthai.* FROM suco,trangthai
               WHERE trangthai.idtrangthai=suco.trangthaiduyet";
     $queryuser=mysqli_query($conn,$sqluser);
 	$kq=$conn->query($sqluser);
@@ -104,22 +104,22 @@
                 <h2>Danh sách sự cố</h2>
             </div><!-- Tiên_20/06 -->
 
-            <div id="table">
-                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+            <div id="table" style="margin: auto;width: 1100px">
+                <table border="1px" class="table table-striped table-bordered table-hover" id="dataTables-example" width="100%">
                     <thead >
                         <tr align="center">
-                            <th style="text-align: center;" width="5%">STT</th>
-                            <th style="text-align: center;" width="11%">Tên sự cố</th>
-                            <th style="text-align: center;"  width="11%">Mô tả sự cố</th>
-                            <th style="text-align: center;" width="9%">Phòng</th>
-                            <th style="text-align: center;" width="5%">Số máy</th>
-                            <th style="text-align: center;" width="9%">Thiết bị hỏng</th>
-                            <th style="text-align: center;" width="7%">Mức độ</th>
-                            <th style="text-align: center;" width="11%">Thông tin thêm</th>
-                            <th style="text-align: center;" width="11%">Ngày tạo</th>
-                            <th style="text-align: center;" width="11%">Ngày dự kiến hoàn thành</th>
-                            <th style="text-align: center;" width="9%">Trạng thái</th>
-                            <th style="text-align: center;" width="9%">Thao tác</th>
+                            <th>STT</th>
+                            <th>Tên sự cố</th>
+                            <th>Mô tả sự cố</th>
+                            <th>Phòng</th>
+                            <th>Số máy</th>
+                            <th>Thiết bị hỏng</th>
+                            <th>Mức độ hỏng</th>
+                            <th>Thông tin thêm</th>
+                            <th>Ngày tạo</th>
+                            <th>Ngày dự kiến</th>
+                            <th>Trạng thái</th>
+                            <th colspan="2">Thao tác</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -166,12 +166,19 @@
 //                      echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="del.php?id='.$userList["MATK"].'" onclick="return confirmAction()"> Delete</a>
 //                                <i class="fa fa-pencil fa-fw"></i> <a href="edituser.php?id='.$userList["MACB"].'">Edit</a></td>';
                       
-						if($userList["trangthai"]=="Chưa duyệt")
-						echo '<td > <i class="fa fa-pencil fa-fw"></i> <a href="../sua.php?id='.$userList["idsuco"].'">Sửa</a></td>';
-						else
-						echo '<td>Không thể sửa</td>';
+						if($userList["idtrangthai"]==0){
+                      echo '<td class="center"><i class="fa fa-pencil fa-fw"></i><a href="../sua.php?id='.$userList["idsuco"].'">Sửa</a></td>';}
+                      else{
+                    echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i>Sửa</td>';
+                  }
+                      if($userList["idtrangthai"]==0){
+                      echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="../xoa.php?id='.$userList["idsuco"].'" onclick="return confirmAction()"> Xóa</a>';
+                  }
+                  else{
+                    echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i>Xóa</td>';
                         echo '</tr>';
                     }
+                }
                       ?>
                     </tbody>
                 </table>
