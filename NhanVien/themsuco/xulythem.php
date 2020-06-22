@@ -30,13 +30,13 @@
 		echo "<script language='javascript'>
 											
 									
-											 window.location='../themsuco/themsuco.php';
+											 window.location='../nhanvien.php';
 				</script>";
 }else {
 	$_SESSION['them']='Thêm sự cố không thành công';
 		echo "<script language='javascript'>
 											
-											 window.location='../themsuco/themsuco.php';
+											 window.location='../nhanvien.php';
 				</script>";
 	}
 
