@@ -72,12 +72,21 @@ if(isset($_GET["id"])){
 						<div style="color: aqua; font-size: 40px">Hệ thống quản lý sự cố Helpdesk</div>
                         <div id="header_icon">
                             <div id="home">
-                                <a href="../logout.php"><img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a>
+                                <a href="../logout.php" onclick="return confirmAction()">
+                                	<img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát">
+                                </a>
                             </div>
                             <div id="logout" style="margin:0px; padding:0; ">
-                                <a href="quanly.php"><img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ"></a>
+                                <a href="quanly.php">
+                                	<img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ">
+                                </a>
                             </div>
-                            <div id="name"><strong style="color: #e0f74f"><?php echo $name.'  ('. $Mnv.')' ?></strong></div>
+                            <div id="name">
+                            	<strong style="color: #e0f74f">
+                            		<?php echo $name.'  ('. $Mnv.')' ?>
+                            			
+                            	</strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,6 +208,15 @@ if(isset($_GET["id"])){
         <div id="footer" style="text-align: center">
             <p>Khoa Công nghệ thông tin - Đại học Cần Thơ</p>
         </div>
+
+        <!-- Tiên 22/06 -->
+        <SCRIPT LANGUAGE="JavaScript">
+            function confirmAction() {
+                return confirm("Bạn có chắc muốn đăng xuất?")
+            }
+    
+
+        </SCRIPT>
     </body>
 
     </html>

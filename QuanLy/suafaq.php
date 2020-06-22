@@ -104,9 +104,22 @@ if(isset($_POST["btedit"])) {
         <div id="header">
             <div id="webname"><div style="font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                 <div id="header_icon">
-                    <div id="home" ><a href="../logout.php"><img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a></div>
-                    <div id="logout" style="margin-top:3px; padding:0; "><a href="quanly.php"><img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ"></a></div>
-                    <div id="name"><strong style="color: #e0f74f"><?php echo $name.'  ('. $Mnv.')' ?></strong></div>
+                    <div id="home" >
+                        <a href="../logout.php" onclick="return confirmAction()">
+                            <img src="../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát">
+                        </a>
+                    </div>
+                    <div id="logout" style="margin-top:3px; padding:0; ">
+                        <a href="quanly.php">
+                            <img src="../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ">
+                        </a>
+                    </div>
+                    <div id="name">
+                        <strong style="color: #e0f74f">
+                            <?php echo $name.'  ('. $Mnv.')' ?>
+                            
+                        </strong>
+                    </div>
                 </div>
             </div>
         </div>
@@ -209,6 +222,14 @@ if(isset($_POST["btedit"])) {
 
 </div>
   <?php include 'footer.php';?>
+  <!-- Tiên 22/06 -->
+        <SCRIPT LANGUAGE="JavaScript">
+            function confirmAction() {
+                return confirm("Bạn có chắc muốn đăng xuất?")
+            }
+    
+
+        </SCRIPT>
 
 </body>
 <!--
