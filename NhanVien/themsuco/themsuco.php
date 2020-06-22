@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 //	if (isset($_SESSION['idtaikhoan'])) {
 //		$taikhoan = $_SESSION['idtaikhoan'];
@@ -24,7 +25,7 @@
 	
 	<head>
 		<meta charset="UTF-8">
-        <title>Hệ thống quản lý sự cố helpdesk</title>
+        <title>Hệ thống quản lý sự cố Helpdesk</title>
 		<link rel="stylesheet" href="../../public/css/stylePanel.css">
 		<link rel="stylesheet" href="../../public/css/menustyle.css">
 		<script src="../../ckeditor/ckeditor.js"></script>
