@@ -339,7 +339,7 @@ $i=1;
 	</select>
      <br />
      <label>Phân công xử lý</label>
-     <select required="" name="nguoigiaiquyet" id="gender" class="form-control" onchange="validateSelectBox(this)">
+     <select required="" name="nguoigiaiquyet" id="nguoigiaiquyet" class="form-control nguoigiaiquyet" onchange="validateSelectBox(this)">
 		 <option value=""> -- Chọn -- </option>
       <?php  while ($userList=mysqli_fetch_array($queryuser)){
 							echo '<option value="'.$userList["idtaikhoan"].'">'.$userList["idtaikhoan"].'__'.$userList["taikhoan"].'</option>'.'<br>';
@@ -349,20 +349,17 @@ $i=1;
 
 						<h3>Danh sách người xử lý bạn đã chọn:</h3>
 		<script language="javascript">
-            function validateSelectBox(obj){
-                var options = obj.children;
-                var html = '';
-				var id = '';
-                for (var i = 0; i < options.length; i++){
-                    if (options[i].selected){
-                        html += '<li>'+options[i].value+'</li>';
-						id +=options[i].value;
-                    }
-                }
+			$(document).ready(function(){ 
+             $('select[name="nguoigiaiquyet"]').on('change',function(){
+                    var vc_ma = $(this).val();
+                
+                console.log(vc_ma);
+               
                 
 //                document.getElementById('result').innerHTML = html;
-				document.getElementById("result1").value = id;
-            }
+				document.getElementById("result1").value = vc_ma;
+            });
+        });
         </script>
 			<div>
 				<input type="text" id="result1" name="tensuco" width="200px" placeholder="Tên kỹ thuật xử lý" value="" required disabled />
