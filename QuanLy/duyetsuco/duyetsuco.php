@@ -170,7 +170,7 @@ mysqli_set_charset($conn, 'UTF8');
 
 						// echo '<td><a href="../edituser.php?id='.$userList["idsuco"].'" class="btn btn-primary" >'.$userList["trangthai"].'</a></td>';
                     //  echo  '<td>'.$userList["trangthai"].'</td>';
-						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="del.php?id='.$userList["idsuco"].'" onclick="return confirmAction()"> Xóa</a>
+						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="del.php?id='.$userList["idsuco"].'" onclick="return confirmAction1()"> Xóa</a>
                         
                                 <i class="fa fa-pencil fa-fw"></i> <a href="../sua.php?id='.$userList["idsuco"].'">Sửa</a></td>';
                         echo '</tr>';
@@ -210,7 +210,7 @@ mysqli_set_charset($conn, 'UTF8');
 
         </script>
         <SCRIPT LANGUAGE="JavaScript">
-            function confirmAction() {
+            function confirmAction1() {
                 return confirm("Bạn có chắc muốn xóa sự cố này ? ")
             }
 	
