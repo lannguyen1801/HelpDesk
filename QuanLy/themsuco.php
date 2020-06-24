@@ -168,7 +168,7 @@
    				  	  <td width="90%"> <input type="text" style="width: 200px; height: 20px" name="tensuco" placeholder="Nhập tên sự cố" required /></br></td>
         			</tr> -->
         			<tr >
-					  	<td><label for="sel2"> &emsp;Tên sự cố</label></td>
+					  	<td><label for="sel2"> &emsp;Phân loại</label></td>
 						<td>
 							<select  name="tensuco" class="form-control" id="tensuco" style="width:150px;">
 								  <option value="Phần Mềm">&emsp;Phần Mềm</option>
@@ -179,8 +179,8 @@
 					</tr>
 					<tr></tr>
         			<tr >
-        				<td ><label for="sel2">&emsp;Mô tả sự cố</label></td>
-        				<td > <textarea style="margin-top: 10px; width: 300px; height: 40px" name="motasuco" placeholder="Nhập mô tả" required></textarea></br></td>
+        				<td ><label for="sel2">&emsp;Tên sự cố</label></td>
+        				<td > <textarea style="margin-top: 10px; width: 300px; height: 40px" name="motasuco" placeholder="Nhập tên sự cố" required></textarea></br></td>
         			</tr>
 <!--
         			<tr>
@@ -190,12 +190,17 @@
         			</tr>
 -->
         			<tr>
-        				<td><label for="sel2">&emsp;Thông tin thêm</label></td>
-						<td><textarea name="post_content" id="editor" ></textarea></td>
+                        <td></td>
+                        <td><span class="ckarea" style="display:none;">Vui lòng mô tả qua hình ảnh hay thông tin chi tiết để KTV có thể nhanh chóng xử lý</span></td>
+                        
+                    </tr>
+        			<tr>
+        				<td><label for="sel2">&emsp;Mô tả</label></td>
+						<td><textarea name="post_content" id="post_content" ></textarea></td>
 						<script>
 						var url = 'http://localhost/helpdesk';
 							// Thay thế <textarea id="editor"> với CKEditor
-							CKEDITOR.replace( 'editor',{
+							CKEDITOR.replace( 'post_content',{
 								uiColor: '#9AB8F3',
 								filebrowserBrowseUrl: url+'/ckfinder/ckfinder.html',
 								filebrowserImageBrowseUrl: url+'/ckfinder/ckfinder.html?type=Images',
@@ -265,7 +270,7 @@
 					<tr>
         				<td><label style="margin-top: 10px;" for="sel2">&emsp;Số máy</label></td>
    				  	  	<td width="90%"> 
-   				  	  		<input type="text" style="margin-top: 10px;width: 300px; height: 40px" name="somay" id="txtsomay" placeholder="Nhập số máy" required />
+   				  	  		<input type="number" min="1" required="" step="1" max="40" style="margin-top: 10px;width: 300px; height: 40px" name="somay" id="txtsomay" placeholder="Nhập số máy" required />
    				  	  		</br> 
    				  	  		<div id="nhacLoiUn"></div>
    				  	  	</td>
@@ -310,5 +315,20 @@ $(document).ready(function(){
 	});	
 });
 </script>
+<!--  lan thêm scrip bắt thông tin trong editor -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function (e) {
+                var description = CKEDITOR.instances['post_content'].getData().replace(/<[^>]*>/gi, '').length;
+                console.log(description);
+                if (!description){
+                    alert( 'Vui lòng nhập đầy đủ thông tin' );
+                    $(".ckarea").show();
+                    e.preventDefault();
+                }
+        
+            });
+        });
+    </script>
 	</body>
 </html>

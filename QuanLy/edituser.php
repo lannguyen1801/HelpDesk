@@ -205,9 +205,9 @@ $i=1;
 					<table width="89%" height="50" class="table table-bordered" >
 					<tr>
 						<th style="text-align: center;" width="5%">ID</th>
-						<th style="text-align: center;" width="9%">Tên sự cố</th>
-						<th style="text-align: center;"width="15%">Mô tả</th>
-						<th style="text-align: center;"width="10%">Thông tin</th>
+						<th style="text-align: center;" width="9%">Phân loại</th>
+						<th style="text-align: center;"width="15%">Tên sự cố</th>
+						<th style="text-align: center;"width="10%">Mô tả</th>
 						<th style="text-align: center;"width="9%">Thiết bị hỏng</th>
 						<th style="text-align: center;"width="9%" >Mức độ</th>
 						<th style="text-align: center;"width="9%">Trạng thái</th>
@@ -328,10 +328,10 @@ $i=1;
 			echo $idsc; ?>" readonly/>
      <br />
      <label>Xử lý công việc</label>
-     <textarea name="congviec" id="address" class="form-control"><?php echo $tensuco?></textarea>
+     <textarea required="" name="congviec" id="address" class="form-control"><?php echo $tensuco?></textarea>
      <br>
      <label>Đánh giá mức độ</label>
-    <select name="mucdohu" id="gender" class="form-control" onchange="validateSelectBox(this)">
+    <select required="" name="mucdohu" id="gender" class="form-control" onchange="validateSelectBox(this)">
     	<option value=""> -- Chọn -- </option>
 			<option value="1">Nhẹ</option>
 			<option value="2">Trung bình</option>
@@ -339,7 +339,7 @@ $i=1;
 	</select>
      <br />
      <label>Phân công xử lý</label>
-     <select name="nguoigiaiquyet" id="gender" class="form-control" onchange="validateSelectBox(this)">
+     <select required="" name="nguoigiaiquyet" id="gender" class="form-control" onchange="validateSelectBox(this)">
 		 <option value=""> -- Chọn -- </option>
       <?php  while ($userList=mysqli_fetch_array($queryuser)){
 							echo '<option value="'.$userList["idtaikhoan"].'">'.$userList["idtaikhoan"].'__'.$userList["taikhoan"].'</option>'.'<br>';
@@ -370,7 +370,7 @@ $i=1;
 
      <br />  
      <label>Ước lượng thời gian</label>
-     <input type="date" name="thoigian" id="designation" class="form-control" />
+     <input required="" type="date" name="thoigian" id="designation" class="form-control" />
      <br />  
      <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
 

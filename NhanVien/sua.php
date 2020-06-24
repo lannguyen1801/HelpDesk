@@ -103,6 +103,9 @@ if(isset($_POST["btedit"])) {
         <link rel="stylesheet" href="../../public/css/stylechitiet.css"><!-- Tiên 20/06 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Tiên 20/06 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!-- Tiên 20/06 -->
+        <!-- lan thêm thư viện -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+        <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
 </head>
 
@@ -187,15 +190,25 @@ if(isset($_POST["btedit"])) {
                     <?php echo '<input type="text"  name="id" class="form-control" id="usr" value="'.$idsuco.'" readonly>';?>
                     <p class="text-danger" id="msg"></p>
                 </div>
-                <div class="form-group">
+                 <div class="form-group">
+                    <label for="usr">Phân loại</label>
+                    <select name="tensuco" class="form-control" id="sel2">
+                        <?php
+                            if($tensuco=="Phần mềm"){
+                                echo '<option value="Phần cứng">Phần cứng</option>';
+                                echo '<option value="Phần mềm" selected>Phần mềm</option>';
+                            }else{
+                                echo '<option value="Phần cứng"selected>Phần cứng</option>';
+                                echo '<option value="Phần mềm" >Phần mềm</option>';
+                            }
+                        
+                        ?>
+                    </select>
 
-                    <label for="usr">Tên sự cố</label>
-                    <?php echo '<input type="text"  name="tensuco" class="form-control" id="usr" value="'.$tensuco.'" >';?>
-                    <p class="text-danger" id="msg"></p>
                 </div>
                 <div class="form-group">
-                    <label for="usr1">Mô tả sự cố</label>
-                    <?php echo '<input type="text" name="mota" value="'.$motasuco.'" class="form-control" id="mota" placeholder="Nguyễn Văn A">';?>
+                    <label for="usr1">Tên sự cố</label>
+                    <?php echo '<input type="text" name="mota" value="'.$motasuco.'" class="form-control" id="mota" placeholder="Tên sự cố" required">';?>
 
                 </div>
 				<div class="form-group">
@@ -225,7 +238,7 @@ if(isset($_POST["btedit"])) {
 				<div class="form-group">
 
                     <label for="usr">Số máy</label>
-                    <?php echo '<input type="text"  name="somay" class="form-control" id="usr" value="'.$somay.'" >';?>
+                    <?php echo '<input type="number" min="1" required="" step="1" max="40" name="somay" class="form-control" id="usr" value="'.$somay.'" >';?>
                     <p class="text-danger" id="msg"></p>
                 </div>
 				<div class="form-group">
@@ -302,9 +315,14 @@ if(isset($_POST["btedit"])) {
                         ?>
                     </select>
                 </div>
+                <div>
+                     
+                        <td><span class="ckarea" style="display:none;">Vui lòng mô tả qua hình ảnh hay thông tin chi tiết để KTV có thể nhanh chóng xử lý</span></td>
+                   
+                </div>
 				<div class="form-group">
-                    <label for="exampleInputEmail1">Thông tin thêm</label>
-                   <?php echo '<textarea name="post_content" id="post_content" placeholder="" class="form-control"  >'.$hinhanh.'</textarea>';?>
+                    <label for="exampleInputEmail1">Mô tả chi tiết</label>
+                   <?php echo '<textarea name="post_content" id="post_content" required placeholder="" class="form-control"  >'.$hinhanh.'</textarea>';?>
                 </div>
 
                 <input class="btn btn-success" name="btedit" type="submit" value="Sửa đổi">
@@ -377,3 +395,18 @@ if(isset($_POST["btedit"])) {
 								
 							} );// tham số là biến name của textarea
 						</script>
+ <!--  lan thêm scrip bắt thông tin trong editor -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function (e) {
+                var description = CKEDITOR.instances['post_content'].getData().replace(/<[^>]*>/gi, '').length;
+                console.log(description);
+                if (!description){
+                    alert( 'Vui lòng nhập đầy đủ thông tin' );
+                    $(".ckarea").show();
+                    e.preventDefault();
+                }
+        
+            });
+        });
+    </script>

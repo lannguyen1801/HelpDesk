@@ -34,6 +34,9 @@
 <!--		<script src="../ckeditor/ckeditor.js"></script>-->
 <!--		<script src="../ckfinder/ckfinder.js"></script>-->
 		<script src="../ckeditor/ckeditor.js"></script>
+		<!-- lan thêm thư viện -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+        <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 <!--		<script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>-->
 		<style>
 			.btn-success{
@@ -169,13 +172,18 @@
         			</tr>
 -->
         			<tr>
+                        <td></td>
+                        <td><span class="ckarea" style="display:none;">Vui lòng nhập hướng giải quyết</span></td>
+                        
+                    </tr>
+        			<tr>
         				<td><label for="sel2">&emsp;Giải quyết</label></td>
         				
-						<td><textarea name="post_content" id="editor1" ></textarea></td>
+						<td><textarea name="post_content" id="post_content" ></textarea></td>
 						<script>
 						var url = 'http://localhost/helpdesk';
 							// Thay thế <textarea id="editor1"> với CKEditor
-							CKEDITOR.replace( 'editor1',{
+							CKEDITOR.replace( 'post_content',{
 								uiColor: '#9AB8F3',
 								filebrowserBrowseUrl: url+'/ckfinder/ckfinder.html',
 								filebrowserImageBrowseUrl: url+'/ckfinder/ckfinder.html?type=Images',
@@ -209,5 +217,21 @@
     
 
         </SCRIPT>
+	</body>
+	<!--  lan thêm scrip bắt thông tin trong editor -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function (e) {
+                var description = CKEDITOR.instances['post_content'].getData().replace(/<[^>]*>/gi, '').length;
+                console.log(description);
+                if (!description){
+                    alert( 'Vui lòng nhập đầy đủ thông tin' );
+                    $(".ckarea").show();
+                    e.preventDefault();
+                }
+        
+            });
+        });
+    </script>
 	</body>
 </html>

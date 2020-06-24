@@ -58,7 +58,7 @@ mysqli_set_charset($conn, 'UTF8');
                             <div id="home">
                                 <a href="../../logout.php" onclick="return confirmAction()"><img src="../../public/img/nhanvienlogin/thoat.png" style="margin-top: 20px" alt="Thoát"></a>
                             </div>
-                            <div id="logout" style="margin:0px; padding:0; ">
+                            <div id="logout" style="margin:3px; padding:0; ">
                                 <a href="../quanly.php"><img src="../../public/img/nhanvienlogin/trangchu.png" style="margin: 0px;" alt="Trang chủ"></a>
                             </div>
                             <div id="name"><strong style="color: #e0f74f"><?php echo $name.'  ('. $Mnv.')' ?></strong></div>
@@ -100,13 +100,13 @@ mysqli_set_charset($conn, 'UTF8');
                     <thead>
                         <tr align="center">
                             <th style="text-align: center;" width="5%">STT</th>
-                            <th style="text-align: center;" width="11%">Tên sự cố</th>
-                            <th style="text-align: center;"  width="11%">Mô tả sự cố</th>
+                            <th style="text-align: center;" width="11%">Phân loại</th>
+                            <th style="text-align: center;"  width="11%">Tên sự cố</th>
 							<th style="text-align: center;" width="9%">Phòng</th>
 							<th style="text-align: center;" width="5%">Số máy</th>
 							<th style="text-align: center;" width="9%">Thiết bị hỏng</th>
                             <th style="text-align: center;" width="7%">Mức độ</th>
-							<th style="text-align: center;" width="11%">Thông tin thêm</th>
+							<th style="text-align: center;" width="11%">Mô tả</th>
 							<th style="text-align: center;" width="11%">Ngày tạo</th>
 							<th style="text-align: center;" width="11%">Ngày dự kiến hoàn thành</th>
                             <th style="text-align: center;" width="9%">Trạng thái</th>

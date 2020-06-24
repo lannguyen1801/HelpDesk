@@ -109,13 +109,13 @@
                     <thead >
                         <tr align="center">
                             <th>STT</th>
+                            <th>Phân loại</th>
                             <th>Tên sự cố</th>
-                            <th>Mô tả sự cố</th>
                             <th>Phòng</th>
                             <th>Số máy</th>
                             <th>Thiết bị hỏng</th>
                             <th>Mức độ hỏng</th>
-                            <th>Thông tin thêm</th>
+                            <th>Mô tả</th>
                             <th>Ngày tạo</th>
                             <th>Ngày dự kiến</th>
                             <th>Trạng thái</th>
