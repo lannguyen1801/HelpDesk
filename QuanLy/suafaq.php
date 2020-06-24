@@ -94,6 +94,9 @@ if(isset($_POST["btedit"])) {
          <link rel="stylesheet" href="../../public/css/stylechitiet.css"><!-- Tiên 20/06 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Tiên 20/06 -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"><!-- Tiên 20/06 -->
+        <!-- lan thêm thư viện -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+        <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
 
 </head>
@@ -196,12 +199,15 @@ if(isset($_POST["btedit"])) {
                
                 <div class="form-group">
                     <label for="usr1">Tiêu đề</label>
-                    <?php echo '<textarea type="text" name="tieude"  class="form-control" id="mota" placeholder="">'.$tieude.'</textarea>';?>
+                    <?php echo '<textarea type="text" name="tieude"  class="form-control" id="mota" required placeholder="">'.$tieude.'</textarea>';?>
 
                 </div>
 				
 				
        
+            </div>
+            <div>
+                <span class="ckarea" style="display:none;">  Vui lòng nhập hướng giải quyết</span>
             </div>
 			
             <div class="col-md-4">
@@ -282,3 +288,18 @@ if(isset($_POST["btedit"])) {
 								
 							} );// tham số là biến name của textarea
 						</script>
+<!--  lan thêm scrip bắt thông tin trong editor -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function (e) {
+                var description = CKEDITOR.instances['post_content'].getData().replace(/<[^>]*>/gi, '').length;
+                console.log(description);
+                if (!description){
+                    alert( 'Vui lòng nhập đầy đủ thông tin' );
+                    $(".ckarea").show();
+                    e.preventDefault();
+                }
+        
+            });
+        });
+    </script>

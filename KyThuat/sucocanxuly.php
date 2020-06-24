@@ -129,11 +129,11 @@ $i=1;
 					<table width="89%" height="50" class="table table-bordered" style="">
 					<tr align="center"> 
 						<th style="text-align: center;"width="5%">ID</th>
+						<th style="text-align: center;"width="11%">Phân loại</th>
 						<th style="text-align: center;"width="11%">Tên sự cố</th>
-						<th style="text-align: center;"width="11%">Mô tả</th>
 						<th style="text-align: center;"width="9%">Phòng</th>
 						<th style="text-align: center;"width="5%">Số máy</th>
-						<th style="text-align: center;"width="9%">Thông tin</th>
+						<th style="text-align: center;"width="9%">Mô tả</th>
 						<th style="text-align: center;"width="7%">Thiết bị hỏng</th>
 						<th style="text-align: center;"width="3%">Mức độ</th> <!-- lan 20/06 -->
 						<th style="text-align: center;"width="11%">Ngày tạo</th>

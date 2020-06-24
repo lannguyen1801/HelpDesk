@@ -109,13 +109,13 @@
                     <thead>
                         <tr align="center">
                             <th style="text-align: center;" width="5%">STT</th>
-                            <th style="text-align: center;" width="11%">Tên sự cố</th>
-                            <th style="text-align: center;"  width="15%">Mô tả sự cố</th>
+                            <th style="text-align: center;" width="11%">Phân loại</th>
+                            <th style="text-align: center;"  width="15%">Tên sự cố</th>
                             <th style="text-align: center;" width="9%">Phòng</th>
                             <th style="text-align: center;" width="5%">Số máy</th>
                             <th style="text-align: center;" width="9%">Thiết bị hỏng</th>
                             <th style="text-align: center;" width="10%">Mức độ</th>
-                            <th style="text-align: center;" width="13%">Thông tin thêm</th>
+                            <th style="text-align: center;" width="13%">Mô tả</th>
                             <th style="text-align: center;" width="11%">Ngày tạo</th>
                             <th style="text-align: center;" width="11%">Ngày dự kiến hoàn thành</th>
                             <th style="text-align: center;" width="9%">Trạng thái</th>

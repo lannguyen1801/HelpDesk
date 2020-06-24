@@ -1,8 +1,8 @@
 <?php
     session_start();
-//	if (isset($_SESSION['idtaikhoan'])) {
-//		$taikhoan = $_SESSION['idtaikhoan'];
-//	  }
+//  if (isset($_SESSION['idtaikhoan'])) {
+//      $taikhoan = $_SESSION['idtaikhoan'];
+//    }
    // include ('../db/pgiangvien.php');
     $id=$_SESSION['idtaikhoan'];
     require ('../conn.php');
@@ -21,12 +21,15 @@
 ?>
 <!DOCTYPE html>
 <html>
-	<meta charset="UTF-8">
-	<head>
+    <meta charset="UTF-8">
+    <head>
         <title>Hệ thống quản lý sự cố helpdesk</title>
-		<link rel="stylesheet" href="../public/css/stylePanel.css">
+        <link rel="stylesheet" href="../public/css/stylePanel.css">
         <script src="../ckeditor/ckeditor.js"></script>
         <link rel="stylesheet" href="../../public/css/stylechitiet.css">
+        <!-- lan thêm thư viện -->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+        <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
         <script type="text/javascript">
             function themsuco(){
                 document.getElementById("content1").style.display="block";
@@ -43,12 +46,12 @@
                 }
     }
         </script>
-	</head>
-	<body style="background: #c2ddfc; padding: 0px; margin: 0px;">
-	
-		<div id="header">
-			<div id="webname">
-				<div style="margin-top:10px;font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
+    </head>
+    <body style="background: #c2ddfc; padding: 0px; margin: 0px;">
+    
+        <div id="header">
+            <div id="webname">
+                <div style="margin-top:10px;font-family: Time New Roman;color: aqua; font-size: 25px; width: 800px;float: left"><b><span style="color: yellow ; font-size: 40px;">H</span><span style="color: white ;">Ệ THỐNG QUẢN LÝ</span><br>&emsp;<span style="font-family: Arial;"> SỰ CỐ HELPDESK</span></b> </div>
                 <div id="header_icon">
                     <!-- Tiên 22/06 -->
                      <div id="home" >
@@ -68,10 +71,10 @@
                         </strong>
                     </div>                
                 </div>
-			</div>
+            </div>
 
 
-		</div>
+        </div>
         <div style="text-align: center;color: red;font-weight: bold;display: block" id="ssthem">
          <?php
                             if(isset($_SESSION['them'])){
@@ -130,7 +133,7 @@
                         </td>
                         <td style="padding-top: 5px">
 <!--                            <div class="itemFuntion"><a href="doimatkhau.php"><img src="../public/img/reset.png" height="67px" width="67px" alt=""></a></div>-->
-							 <div class="itemFuntion"><a href="#" id="suco" onclick="themsuco()"><img src="../public/img/nhanvienlogin/them.jpg" height="67px" width="67px" alt=""></a></div>
+                             <div class="itemFuntion"><a href="#" id="suco" onclick="themsuco()"><img src="../public/img/nhanvienlogin/them.jpg" height="67px" width="67px" alt=""></a></div>
                         </td>
                     </tr>
                     <tr>
@@ -139,7 +142,7 @@
                         </td>
                         <td style="padding-top: 5px">
 <!--                            <div class="itemFuntion"><b>Đổi mật khẩu</b></div>-->
-							<div class="itemFuntion"><b>Thêm sự cố</b></div>
+                            <div class="itemFuntion"><b>Thêm sự cố</b></div>
                         </td>
                     </tr>
                     <tr style="padding: 5px">
@@ -177,7 +180,7 @@
                       <td width="90%"> <input type="text" style="width: 200px; height: 20px" name="tensuco" placeholder="Nhập tên sự cố" required /></br></td>
                     </tr> -->
                     <tr>
-                        <td><label for="sel2">Tên sự cố</label></td>
+                        <td><label for="sel2">Phân loại</label></td>
                         <td>
                             <select  name="tensuco" class="form-control" id="tensuco" style="width:150px;">
                                   <option value="Phần mềm">Phần Mềm</option>
@@ -188,8 +191,8 @@
                     </tr>
                     
                     <tr>
-                        <td><label for="sel2">Mô tả sự cố</label></td>
-                        <td > <textarea style="width: 300px; height: 40px" name="motasuco" placeholder="Nhập mô tả" required></textarea></br></td>
+                        <td><label for="sel2">Tên sự cố</label></td>
+                        <td > <textarea style="width: 300px; height: 40px" name="motasuco" placeholder="Nhập tên sự cố" required></textarea></br></td>
                     </tr>
 <!--
                     <tr>
@@ -198,13 +201,18 @@
         
                     </tr>
 -->
+                     <tr>
+                        <td></td>
+                        <td><span class="ckarea" style="display:none;">Vui lòng mô tả qua hình ảnh hay thông tin chi tiết để KTV có thể nhanh chóng xử lý</span></td>
+                        
+                    </tr>
                     <tr>
-                        <td><label for="sel2">Thông tin thêm</label></td>
-                        <td><textarea name="post_content" id="editor" ></textarea></td>
+                        <td><label for="sel2">Mô tả sự cố</label></td>
+                        <td><textarea name="post_content" id="post_content" ></textarea></td>
                         <script>
                         var url = 'http://localhost/helpdesk';
                             // Thay thế <textarea id="editor"> với CKEditor
-                            CKEDITOR.replace( 'editor',{
+                            CKEDITOR.replace( 'post_content',{
                                 uiColor: '#9AB8F3',
                                 filebrowserBrowseUrl: url+'/ckfinder/ckfinder.html',
                                 filebrowserImageBrowseUrl: url+'/ckfinder/ckfinder.html?type=Images',
@@ -290,7 +298,7 @@
             </form>
         </div>
 
-		<?php include 'footer.php';?>
+        <?php include 'footer.php';?>
         <!-- Tiên 22/06 -->
         <SCRIPT LANGUAGE="JavaScript">
             function confirmAction() {
@@ -299,7 +307,21 @@
     
 
         </SCRIPT>
-		
-
+        
+    <!--  lan thêm scrip bắt thông tin trong editor -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("form").submit(function (e) {
+                var description = CKEDITOR.instances['post_content'].getData().replace(/<[^>]*>/gi, '').length;
+                console.log(description);
+                if (!description){
+                    alert( 'Vui lòng nhập đầy đủ thông tin' );
+                    $(".ckarea").show();
+                    e.preventDefault();
+                }
+        
+            });
+        });
+    </script>
 
 </html>
