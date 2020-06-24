@@ -121,7 +121,7 @@ mysqli_set_charset($conn, 'UTF8');
 						
 //						$hinhanh=../../themsuco/.$userList;
 						echo '<td style="text-align: left;" >'.$userList["giaiquyet"].'</td>';
-						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="delfaq.php?id='.$userList["idfaq"].'" onclick="return confirmAction()"> Xóa</a><br>
+						echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="delfaq.php?id='.$userList["idfaq"].'" onclick="return confirmAction1()"> Xóa</a><br>
                                 <i class="fa fa-pencil fa-fw"></i> <a href="../suafaq.php?id='.$userList["idfaq"].'">Sửa</a></td>';
                     //  echo  '<td>'.$userList["trangthai"].'</td>';
                      
@@ -162,7 +162,7 @@ mysqli_set_charset($conn, 'UTF8');
 
         </script>
         <SCRIPT LANGUAGE="JavaScript">
-            function confirmAction() {
+            function confirmAction1() {
                 return confirm("Bạn có chắc muốn xóa câu hỏi này ?")
             }
 	

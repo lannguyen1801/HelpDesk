@@ -172,7 +172,7 @@
                     echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i>Sửa</td>';
                   }
                       if($userList["idtrangthai"]==0){
-                      echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="../xoa.php?id='.$userList["idsuco"].'" onclick="return confirmAction()"> Xóa</a>';
+                      echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="../xoa.php?id='.$userList["idsuco"].'" onclick="return confirmAction1()"> Xóa</a>';
                   }
                   else{
                     echo '<td class="center"><i class="fa fa-trash-o  fa-fw"></i>Xóa</td>';
@@ -218,8 +218,8 @@
 
         </script>
         <SCRIPT LANGUAGE="JavaScript">
-            function confirmAction() {
-                return confirm("Bạn có chắc muốn xóa tài khoản này")
+            function confirmAction1() {
+                return confirm("Bạn có chắc muốn xóa sự cố này?")
             }
 
         </SCRIPT>
