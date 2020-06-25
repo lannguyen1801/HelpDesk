@@ -282,7 +282,7 @@
                     <tr>
                         <td><label for="sel2">Số máy</label></td>
                         <td width="90%"> 
-                            <input type="text" style="width: 200px; height: 20px" name="somay" id="txtsomay" onkeyup="ktsomay()" placeholder="Nhập số máy" required />
+                            <input type="number" min="1" required="" step="1" max="40" style="width: 200px; height: 20px" name="somay" id="txtsomay" onkeyup="ktsomay()" placeholder="Nhập số máy" required />
                             </br> 
                             <div id="nhacLoiUn"></div>
                         </td>
