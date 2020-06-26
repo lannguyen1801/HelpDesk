@@ -44,7 +44,19 @@
                 else{
                     document.getElementById("nhacLoiUn").innerHTML="Số máy phải nhỏ hơn 40";
                 }
+
     }
+            function ktsdt(){
+                var sdt=document.getElementById('sdt').value;
+                var kt=/^[0-9]{10}$/;
+                if(kt.test(sdt)==true){
+                    document.getElementById('thongbaosdt').innerHTML='Số điện thoại hợp lệ';
+                }
+                else{
+                    document.getElementById('thongbaosdt').innerHTML='Số điện thoại không hợp lệ';
+                }
+                
+            }
         </script>
     </head>
     <body style="background: #c2ddfc; padding: 0px; margin: 0px;">
@@ -286,6 +298,13 @@
                             </br> 
                             <div id="nhacLoiUn"></div>
                         </td>
+                    </tr>
+                    <tr>
+                        <td><label for="sel2">Số điện thoại</label></td>
+                      <td width="90%"> <input type="text" style="width: 300px; height: 20px" name="sodt" id="sdt" placeholder="Nhập số dt" onkeyup="ktsdt()" required />
+                     </br> 
+                            <div id="thongbaosdt"></div>
+                      </td>
                     </tr>
                     <tr>    
                         <td height="61"></td>

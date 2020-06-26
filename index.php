@@ -76,7 +76,8 @@ new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_el
 	<table id="table">
 		<br><br>
 		<tr>
-			<th colspan="3"><h1 style="color: white" align="center" ><b>HỆ THỐNG QUẢN LÝ SỰ CỐ HELPDESK</b></h1></th>
+			<th colspan="3"><h1 style="color: white" align="center" ><b>HỆ THỐNG QUẢN LÝ SỰ CỐ HELPDESK</b></h1><h3 style="text-align: center;color: red;">HOTLINE: 19001234</h3>
+			</th>
 		</tr>
 		<tr >
 			<td></td>

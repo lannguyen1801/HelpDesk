@@ -76,15 +76,21 @@
 				font-weight: bold;
 }
 		</style>
-<!--
+
 		<script type='text/javascript'>
-            window.parent.CKEDITOR.tools.callFunction(
-                {!! $CKEditorFuncNum !!},
-                '{!! $data['url'] !!}',
-                '{!! $data['message'] !!}'
-            );
+            function ktsdt(){
+                var sdt=document.getElementById('sdt').value;
+                var kt=/^[0-9]{10}$/;
+                if(kt.test(sdt)==true){
+                    document.getElementById('thongbaosdt').innerHTML='Số điện thoại hợp lệ';
+                }
+                else{
+                    document.getElementById('thongbaosdt').innerHTML='Số điện thoại không hợp lệ';
+                }
+                
+            }
         </script>
--->		
+	
 	
 		
 		
@@ -275,6 +281,15 @@
    				  	  		<div id="nhacLoiUn"></div>
    				  	  	</td>
         			</tr>
+					<tr>
+        			<td><label style="margin-top: 10px;" for="sel2">&emsp;SĐT liên lạc</label></td>
+                      <td width="90%"> <input type="text" style="margin-top:10px;width: 300px; height: 40px" name="sodt" id="sdt" placeholder="Nhập số dt" onkeyup="ktsdt()" required />
+					</br> 
+                      <div id="thongbaosdt"></div>
+                      </td>
+                      </tr>
+
+                    
 					<tr>	
 						<td height="61"></td>
 						<td style="">

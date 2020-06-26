@@ -114,6 +114,7 @@
                             <th>Phòng</th>
                             <th>Số máy</th>
                             <th>Thiết bị hỏng</th>
+                            <th>SĐT liên hệ</th>
                             <th>Mức độ hỏng</th>
                             <th>Mô tả</th>
                             <th>Ngày tạo</th>
@@ -143,7 +144,7 @@
 					 echo  '<td >Máy in</td>';
 					  elseif($userList["thietbihong"]=="5")
 					 echo  '<td >Máy fax</td>';
-                    
+                    echo  '<td >'.$userList["sdtlienlac"].'</td>';
                      if($userList["mucdo"]=="0")
                       echo  '<td >//</td>';
                     elseif($userList["mucdo"]=="1")

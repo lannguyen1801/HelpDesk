@@ -105,6 +105,7 @@ mysqli_set_charset($conn, 'UTF8');
 							<th style="text-align: center;" width="9%">Phòng</th>
 							<th style="text-align: center;" width="5%">Số máy</th>
 							<th style="text-align: center;" width="9%">Thiết bị hỏng</th>
+                            <th style="text-align: center;" width="9%">SĐT liên hệ</th>
                             <th style="text-align: center;" width="7%">Mức độ</th>
 							<th style="text-align: center;" width="11%">Mô tả</th>
 							<th style="text-align: center;" width="11%">Ngày tạo</th>
@@ -137,7 +138,7 @@ mysqli_set_charset($conn, 'UTF8');
 					  elseif($userList["thietbihong"]=="5")
 					 echo  '<td >Máy fax</td>';
 
-
+                    echo  '<td>'.$userList["sdtlienlac"].'</td>';
                     if($userList["mucdo"]=="0")
                       echo  '<td >//</td>';
                     elseif($userList["mucdo"]=="1")

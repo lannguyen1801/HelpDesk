@@ -76,6 +76,7 @@
 //		$trangthai=$row2['trangthai'];
 		$ngaytao=$row2['thoigianyeucau'];
 		$hoanthanh=$row2['thoigianhoanthanh'];
+		$sdt=$row2['sdtlienlac'];
 	}
 //	$query = "select * from suco,giaiquyet,taikhoan,trangthaicv where giaiquyet.id=suco.idsuco and suco.idsuco=$idsc and taikhoan.idtaikhoan=giaiquyet.nguoigiaiquyet and giaiquyet.trangthai=trangthaicv.id";
 //    $result = mysqli_query($conn,$query);
@@ -209,6 +210,7 @@ $i=1;
 						<th style="text-align: center;"width="15%">Tên sự cố</th>
 						<th style="text-align: center;"width="10%">Mô tả</th>
 						<th style="text-align: center;"width="9%">Thiết bị hỏng</th>
+						<th style="text-align: center;"width="9%">SĐT liên hệ</th>
 						<th style="text-align: center;"width="9%" >Mức độ</th>
 						<th style="text-align: center;"width="9%">Trạng thái</th>
 						<th style="text-align: center;"width="12%">Ngày tạo</th>
@@ -231,7 +233,7 @@ $i=1;
 					 echo  '<td >Máy in</td>';
 					  elseif($thietbihong=="5")
 					 echo  '<td >Máy fax</td>';
-
+					echo '<td>'.$sdt.'</td>';
 					if($mucdohong=="0")
                       echo  '<td >//</td>';
                     elseif($mucdohong=="1")
