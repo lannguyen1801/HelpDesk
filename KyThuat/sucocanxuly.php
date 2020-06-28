@@ -300,7 +300,7 @@ $i=1;
     </form>
    </div> 
    <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
    </div>
   </div>
  </div>
@@ -319,7 +319,7 @@ $i=1;
     
    </div>
    <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
    </div>
   </div>
  </div>
@@ -345,7 +345,7 @@ $i=1;
 -->
 	</form>
    <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal" onClick="reload()">Close</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" onClick="reload()">Đóng</button>
    </div>
   </div>
  </div>

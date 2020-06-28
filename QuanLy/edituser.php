@@ -63,6 +63,7 @@
 //		$trangthai=$row2['trangthai'];
 		$ngaytao=$row2['thoigianyeucau'];
 		$hoanthanh=$row2['thoigianhoanthanh'];
+		$sdt=$row2['sdtlienlac'];
 	}else {
 		$query = "select * from suco,giaiquyet,taikhoan,trangthaicv where giaiquyet.id=suco.idsuco and suco.idsuco=$idsc and taikhoan.idtaikhoan=giaiquyet.nguoigiaiquyet and giaiquyet.trangthai=trangthaicv.id";
 		$result = mysqli_query($conn,$query);
@@ -233,7 +234,10 @@ $i=1;
 					 echo  '<td >Máy in</td>';
 					  elseif($thietbihong=="5")
 					 echo  '<td >Máy fax</td>';
-					echo '<td>'.$sdt.'</td>';
+					?>
+					<td><?php echo $sdt ?></td>
+					<?php
+					
 					if($mucdohong=="0")
                       echo  '<td >//</td>';
                     elseif($mucdohong=="1")
@@ -371,12 +375,12 @@ $i=1;
      <label>Ước lượng thời gian</label>
      <input required="" type="date" name="thoigian" id="designation" class="form-control" />
      <br />  
-     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
+     <input type="submit" name="insert" id="insert" value="Thêm" class="btn btn-success" />
 
     </form>
    </div> 
    <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
    </div>
   </div>
  </div>
